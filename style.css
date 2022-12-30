@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&display=swap');
+
+body {
+  font-family: 'Mountains of Christmas', cursive;
+}
+
+.checks {
+  border-radius: 10px;
+  width:20px;
+  height:20px;
+  margin-right:10px;
+  margin-top: 15px;
+}
+
+.father_div {
+  margin: auto;
+  display: flex;
+  max-width: 250px;
+}
+
+.child_text_container {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  margin-right: 100px;
+}
+
+.child_time_container {
+  margin:0;
+  padding: 0;
+  min-width: 150px;
+/*   margin-left: 100px; */
+
+/*   display: flex; */
+}
+
+.hours {
+  padding: 5px;
+  border: #007694 solid 1px;
+  border-radius: 10px;
+}
+
+#hours, #hours2 {
+  min-width: 40px;
+}
+
+.text-hidden {
+  visibility: hidden;
+}
+
+.div_all_text {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+#todos {
+  min-height: 100px;
+  margin-top: 10px;
+}
+
+input {
+  border-radius: 10px;
+  border: 2px solid #00ccff;
+  padding: 5px;
+  
+}
+
+#thing:focus {
+  box-shadow: 0 0 5px #0087a8;
+  outline: none;
+  padding: 5px;
+}
+
+.children_counter_div {
+  margin: auto;
+  display: flex;
+  max-width: 400px;
+}
+
+button {
+  border-radius: 20px;
+  border: 2px solid #e5faff;
+  background: #e5faff;
+  
+}
+
+.count_h, .count_p{
+  margin: 15px;
+}
+.count_p {
+  max-width: 200px;
+      word-break: break-all;
+    white-space: normal;
+}
+
+.count_b {
+  margin:2px;
+  width:30px;
+  height: 30px;
+  margin-top: 10px;
+}
+.count_b:hover {
+  
+  color: blue;
+}
+
+#achieved {
+  min-height: 100px;
+  text-decoration: line-through;
+  color: gray;
+  margin-top: 10px;
+  
+}
+
+body {
+  justify-content: center;
+  text-align: center;
+  background: #0068d6;
+ 
+}
+
+.card {
+  background: #8ae8ff;
+  border: 10px solid #8ae8ff;
+  filter: drop-shadow(0px 0px 10px white);
+  border-radius: 20px;
+  min-height: 500px;
+  max-width: 900px;
+  margin:auto;
+  margin-top: 5%;
+}
+
+
+
+p, label, button {
+  font-family: 'Mountains of Christmas', cursive;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #ffffff;
+  color: #ff0000;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: -145%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent #ffffff transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+
+
+
+.snowflake {
+  color: #fff;
+  font-size: 1em;
+  font-family: Arial;
+  text-shadow: 0 0 1px #000;
+}
+
+@-webkit-keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@-webkit-keyframes snowflakes-shake{0%{-webkit-transform:translateX(0px);transform:translateX(0px)}50%{-webkit-transform:translateX(80px);transform:translateX(80px)}100%{-webkit-transform:translateX(0px);transform:translateX(0px)}}@keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@keyframes snowflakes-shake{0%{transform:translateX(0px)}50%{transform:translateX(80px)}100%{transform:translateX(0px)}}.snowflake{position:fixed;top:-10%;z-index:9999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default;-webkit-animation-name:snowflakes-fall,snowflakes-shake;-webkit-animation-duration:10s,3s;-webkit-animation-timing-function:linear,ease-in-out;-webkit-animation-iteration-count:infinite,infinite;-webkit-animation-play-state:running,running;animation-name:snowflakes-fall,snowflakes-shake;animation-duration:10s,3s;animation-timing-function:linear,ease-in-out;animation-iteration-count:infinite,infinite;animation-play-state:running,running}.snowflake:nth-of-type(0){left:1%;-webkit-animation-delay:0s,0s;animation-delay:0s,0s}.snowflake:nth-of-type(1){left:10%;-webkit-animation-delay:1s,1s;animation-delay:1s,1s}.snowflake:nth-of-type(2){left:20%;-webkit-animation-delay:6s,.5s;animation-delay:6s,.5s}.snowflake:nth-of-type(3){left:30%;-webkit-animation-delay:4s,2s;animation-delay:4s,2s}.snowflake:nth-of-type(4){left:40%;-webkit-animation-delay:2s,2s;animation-delay:2s,2s}.snowflake:nth-of-type(5){left:50%;-webkit-animation-delay:8s,3s;animation-delay:8s,3s}.snowflake:nth-of-type(6){left:60%;-webkit-animation-delay:6s,2s;animation-delay:6s,2s}.snowflake:nth-of-type(7){left:70%;-webkit-animation-delay:2.5s,1s;animation-delay:2.5s,1s}.snowflake:nth-of-type(8){left:80%;-webkit-animation-delay:1s,0s;animation-delay:1s,0s}.snowflake:nth-of-type(9){left:90%;-webkit-animation-delay:3s,1.5s;animation-delay:3s,1.5s}
