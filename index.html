@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Countdown Santa!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+<!--     <script src="https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.js"></script> -->
+    <link rel="icon" type="image/x-icon" href="/favicon_io/favicon.ico">
+  </head>
+  <body>
+    <div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'counter')" id="counter_b">Counter</button>
+  <button class="tablinks" onclick="openCity(event, 'countdown')" id="countdown_b">Countdown</button>
+  <button class="tablinks" onclick="openCity(event, 'statistic')" id="statistic_b">Statistic</button>
+</div>
+
+<div id="countdown" class="tabcontent">
+    <div class="card">
+      <h1>Countdown To-do list</h1>
+      
+      <lable class="popup" id="leble_thing" style="font-size:20px; font-weight: 700;">
+        I have to do: 
+        <input id="thing" type="text" autocomplete="off" onclick="myFunction('thing_pop', ' ')" placeholder="send gifts to kids">
+        <span class="popuptext" id="thing_pop">What do I need to do?
+        </span>
+      </lable>
+      
+      <lable class="popup" id="lable_p" style="font-size:20px; font-weight: 700;">in
+        <input id="hours" type="number" style="width:25px" onclick="myFunction('hr_pop', ' ')" placeholder="5"> hrs
+        <span class="popuptext" id="hr_pop">Hmm, how long?
+        </span>
+      </lable>
+      
+      <button onclick="addTodo()" id="add">Add</button>
+      
+      <div id="todos">
+      </div>
+      
+      <div id="achieved">
+      </div>
+      
+    </div>
+</div>
+
+<div id="counter" class="tabcontent">
+  <div class="card">
+    <h1>Counters</h1>
+    
+    <lable class="popup" id="leble_thing" style="font-size:20px; font-weight: 700;">
+        I have done: 
+        <input id="thing2" type="text" autocomplete="off" onclick="myFunction('thing_pop2', ' ')" placeholder="wash my sledge">
+        <span class="popuptext" id="thing_pop2">What have I done?
+        </span>
+    </lable>
+      
+    <lable class="popup" id="lable_p" style="font-size:20px; font-weight: 700;">for
+        <input id="hours2" type="number" style="width:25px" onclick="myFunction('timed_pop', ' ')" placeholder="1"> hrs
+        <span class="popuptext" id="timed_pop">Hmm, how long?
+        </span>
+    </lable>
+    
+    <button onclick="addCounter()" id="add_counter">Add</button>
+    
+    <div id="counted-items">
+      
+    </div>
+
+    
+    <div>
+    </div>
+  </div>
+</div>
+
+<div id="statistic" class="tabcontent">
+  <div id="stat-div" style="background-color: white; width:70%; filter: drop-shadow(0px 0px 10px white);">
+    <button onclick="draw_graph()">Refresh</button>
+  </div>
+</div>
+
+<div class="snowflakes" aria-hidden="true">
+  <div class="snowflake">
+  ❅
+  </div>
+  <div class="snowflake">
+  ❅
+  </div>
+  <div class="snowflake">
+  ❆
+  </div>
+  <div class="snowflake">
+  ❄
+  </div>
+  <div class="snowflake">
+  ❅
+  </div>
+  <div class="snowflake">
+  ❆
+  </div>
+  <div class="snowflake">
+  ❄
+  </div>
+  <div class="snowflake">
+  ❅
+  </div>
+  <div class="snowflake">
+  ❆
+  </div>
+  <div class="snowflake">
+  ❄
+  </div>
+</div>
+    
+    <script src="stat_graph.js"></script>
+    <script src="counter.js"></script>
+    <script src="script.js"></script>
+
+    
+    <style>
+      * {box-sizing: border-box}
+
+/* Style the tab */
+.tab {
+  filter: drop-shadow(0px 0px 10px white);
+  float: left;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  min-width: 20%;
+  height: 90vh;
+  border-radius: 10px;
+  font-family: 'Mountains of Christmas', cursive;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  display: block;
+  background-color: inherit;
+  color: black;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: 'Mountains of Christmas', cursive;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  float: left;
+  padding: 0px 12px;
+/*   border: 1px solid #ccc; */
+  min-width: 79%;
+  border-left: none;
+  height: 100%;
+}
+
+    </style>
+    <script>
+      function openCity(evt, cityName) {
+      // Declare all variables
+      var i, tabcontent, tablinks;
+    
+      // Get all elements with class="tabcontent" and hide them
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+    
+      // Get all elements with class="tablinks" and remove the class "active"
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+    
+      // Show the current tab, and add an "active" class to the link that opened the tab
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+      function draw_graph(){
+        const d = document.getElementById('stat-div');
+        org = document.getElementById("stat-canva")
+        try {
+          d.removeChild(org)
+        }
+        catch {
+          // console.log("asf")
+        }
+        ctx = document.createElement("canvas")
+        ctx.id = "stat-canva"
+        d.appendChild(ctx)
+        // console.log(ctx)
+        arr = JSON.parse(localStorage.getItem('counted'))
+        names = arr.flat().map(arry => JSON.parse(arry)[1]);
+        datas = arr.flat().map(arry => JSON.parse(arry)[2])
+        // console.log(datas[1])
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: names,
+            datasets: [{
+              label: '# of Hours',
+              data: datas,
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      }
+      document.getElementById("counter_b").click()
+    </script>
+  </body>
+</html>
