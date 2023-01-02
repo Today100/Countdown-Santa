@@ -2,7 +2,7 @@
 
 - A website made for the 2022 CS club Web Development Competition and succesfully won the 2nd place.
 
-- A website contains Countdown timer + Work tracker + Bar chart statistic
+- A winter themed website contains Countdown timer + Work tracker + Bar chart statistic
 
 - You can check out the replit website with this link: https://countdown-santa.gz1000.repl.co/
 
